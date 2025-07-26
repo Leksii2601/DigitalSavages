@@ -1,0 +1,41 @@
+<header class="fixed top-0 left-0 right-0 z-menu">
+  <nav class="flex flex-row p-0 w-full justify-between lg:justify-center items-center px-4 lg:px-0" id="brand-nav">
+    <!-- Logo -->
+    <a aria-current="page" class="lg:order-2 transition-all logo" href="/">
+      <img src="/assets/images/logo.png" alt="">
+    </a>
+    <!-- Main navigation (desktop) -->
+   <ul class="hidden lg:flex w-full list-none m-0 p-0 flex-row order-1 justify-end lg:gap-4 xl:gap-12 px-4 xl:px-8 -mt-4">
+  <li class="rotate-[2deg]"><a href="#about-us">About Us</a></li>
+  <li class="-rotate-[5deg]"><a href="#our-games">Our Games</a></li>
+  <li class="rotate-[8deg]"><a href="#latest-news">Latest News</a></li>
+</ul>
+<ul class="hidden lg:flex w-full list-none m-0 p-0 flex-row order-3 justify-start lg:gap-4 xl:gap-12 px-4 xl:px-8 -mt-4">
+  <li class="rotate-[3deg]"><a href="/join-us/">Join Us</a></li>
+  <li class="-rotate-[6deg]"><a href="/news/">Support Us</a></li>
+  <li class="rotate-[0deg]"><a href="/contact-us/">Contact Us</a></li>
+</ul>
+    <!-- Mobile menu toggle button -->
+    <span class="cursor-pointer no-underline inline-block lg:hidden z-menu hamburger" role="button" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <!-- Mobile navigation menu -->
+    <div class="w-screen h-screen fixed top-0 left-0 right-0 items-center justify-center lg:hidden flex-col brand-mobile-navigation brand-mobile-navigation-closed hidden" id="mobileMenu">
+      <!-- Close button -->
+      <div class="close-button" onclick="closeMobileMenu()" title="Закрити меню">
+        ✕
+      </div>
+      <ul class="list-none m-0 p-0 text-center flex flex-col gap-12 md:gap-8">
+        <li><a href="/" onclick="closeMobileMenu()">Home</a></li>
+        <li><a href="#about-us" onclick="closeMobileMenu()">About Us</a></li>
+        <li><a href="#our-games" onclick="closeMobileMenu()">Our Games</a></li>
+        <li><a href="#latest-news" onclick="closeMobileMenu()">Latest News</a></li>
+        <li><a href="/join-us/" onclick="closeMobileMenu()">Join Us</a></li>
+        <li><a href="/news/" onclick="closeMobileMenu()">Support Us</a></li>
+        <li><a href="/contact-us/" onclick="closeMobileMenu()">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

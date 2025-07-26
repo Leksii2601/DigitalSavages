@@ -1,0 +1,261 @@
+header {
+    color: white;
+    padding: 12px 0;
+   
+}
+
+header .logo {
+    width: 500px;
+    height: auto;
+    display: inline-block;
+    position: relative;
+}
+
+
+
+/* Button (li) styles + "fall in" animation */
+header ul li {
+    padding: 12px 25px;
+    background-color: white;
+    color: black;
+    border-radius: 14px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(.43,1.09,.66,1.09), box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    animation: fall-in 0.7s cubic-bezier(.43,1.09,.66,1.09) backwards;
+}
+
+@keyframes fall-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px) scaleY(0.5) rotate(-10deg);
+        box-shadow: none;
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(10px) scaleY(1.2) rotate(2deg);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    80% {
+        transform: translateY(-4px) scaleY(0.98) rotate(-1deg);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.09);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1) rotate(0deg);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+}
+
+/* Press effect for button */
+header ul li:active {
+    transform: scale(0.93) translateY(3px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    background-color: #f3f4f6;
+}
+
+/* Optional: On hover, slightly lift */
+header ul li:hover,
+header ul li:focus {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.10);
+    background-color: #f1f1fc;
+    outline: none;
+}
+
+/* Mobile Navigation Styles */
+.brand-mobile-navigation {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+}
+
+.brand-mobile-navigation ul li {
+    padding: 16px 32px;
+    background-color: white;
+    color: black;
+    border-radius: 14px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+.brand-mobile-navigation ul li:hover {
+    transform: scale(1.05);
+    background-color: #f1f1fc;
+}
+
+.brand-mobile-navigation ul li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (min-width: 1024px) {
+    .hamburger {
+        display: none !important;
+    }
+    
+}
+@media (max-width: 1024px) {
+    header .logo {
+        width: 400px;
+    }
+    
+    header ul li {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin: 0 2px;
+    }
+}
+
+/* Responsive стилі для мобільного меню */
+@media (max-width: 768px) {
+    .brand-mobile-navigation ul li {
+        width: 200px;
+        padding: 14px 24px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-mobile-navigation ul li {
+        width: 180px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .brand-mobile-navigation ul {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 320px) {
+    .brand-mobile-navigation ul li {
+        width: 160px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+
+/* Покращені стилі для hamburger */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.hamburger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    display: block;
+    transform-origin: center;
+}
+
+/* Анімація перетворення в X для закриття */
+.hamburger.active {
+    background-color: rgba(255, 68, 68, 0.2);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #ff4444;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background-color: #ff4444;
+}
+
+/* Ефект при hover для активного стану */
+.hamburger.active:hover {
+    background-color: rgba(255, 68, 68, 0.3);
+}
+
+.hamburger.active:hover span:nth-child(1),
+.hamburger.active:hover span:nth-child(3) {
+    background-color: #ff6666;
+}
+
+/* Стилі для кнопки закриття в мобільному меню */
+.brand-mobile-navigation .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.brand-mobile-navigation .close-button:hover {
+    color: #ff4444;
+    background-color: rgba(255, 68, 68, 0.2);
+    transform: scale(1.1);
+}
