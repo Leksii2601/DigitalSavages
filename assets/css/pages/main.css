@@ -289,9 +289,9 @@ body{
         gap: 30px;
     }
     
-    .member-photo {
-        width: 200px;
-        height: 180px;
+   .member-photo {
+        width: 180px;
+        height: 160px;
     }
     
     .member-name {
@@ -446,10 +446,7 @@ body{
         width: 220px !important;
     }
     
-    .member-photo {
-        width: 180px;
-        height: 160px;
-    }
+    
 }
 
 /* Landscape orientation for mobile */
@@ -472,4 +469,229 @@ body{
         font-size: 20px;
         margin-top: 20px;
     }
+}
+@media (max-width:512px) {
+  .member-info-straight, .member-info-reverse {
+    text-align: center;
+    width: 100%;
+  }
+    
+}
+/* Section styles */
+.latest-news,
+.our-games {
+  padding: 48px 20px;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+/* Section title */
+.section-title {
+  font-size: 64px;
+  font-weight: 600;
+  padding: 8px 16px;
+  display: inline-block;
+  margin-bottom: 32px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Carousel container */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Carousel arrows */
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  color: #4b5563;
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.carousel-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Carousel content */
+.carousel-content {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 16px 0;
+}
+
+/* Hide scrollbar */
+.carousel-content::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* News cards */
+.news-card {
+  width: 540px;
+  height: 350px;
+  background-color: #d1d5db;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+ transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 7px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Game cards */
+.game-card {
+  width: 340px;
+  height: 250px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.game-card-placeholder {
+  background-color: #d1d5db;
+}
+
+.game-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 7px 32px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .carousel-content {
+    gap: 16px;
+  }
+  
+  .news-card {
+    width: 450px;
+    height: 300px;
+  }
+  
+  .game-card {
+    width: 280px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+  
+  .carousel-arrow {
+    font-size: 2rem;
+    min-width: 50px;
+    height: 50px;
+  }
+  
+  .news-card {
+    width: 380px;
+    height: 250px;
+  }
+  
+  .game-card {
+    width: 240px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .latest-news,
+  .our-games {
+    padding: 32px 16px;
+  }
+  
+  .carousel-container {
+    gap: 8px;
+  }
+  
+  .carousel-content {
+    gap: 12px;
+  }
+  
+  .news-card {
+    width: 300px;
+    height: 200px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+    padding: 4px 8px;
+  }
+  
+  .carousel-arrow {
+    font-size: 1.5rem;
+    min-width: 40px;
+    height: 40px;
+    padding: 4px 8px;
+  }
+  
+  .news-card {
+    width: 250px;
+    height: 160px;
+  }
+  
+
+}
+
+@media (max-width: 320px) {
+  .latest-news,
+  .our-games {
+    padding: 24px 12px;
+  }
+  
+}
+
+/* Optional: Smooth animations for content */
+.news-card,
+.game-card {
+  animation: fade-in 0.6s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

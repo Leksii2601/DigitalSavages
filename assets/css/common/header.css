@@ -1,6 +1,8 @@
 header {
     color: white;
     padding: 12px 0;
+    background: rgba(167, 167, 167, 0.266);
+    backdrop-filter: blur(9px);
 }
 
 header .logo {
@@ -128,47 +130,14 @@ header ul li:nth-child(6) {
     font-size: 18px;
 }
 
-/* Hamburger Menu Icon */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 8px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
-/* Hamburger Animation */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-@media (min-width: 1024px) {
+/* Hamburger перемикання на 1280px */
+@media (min-width: 1280px) {
     .hamburger {
         display: none !important;
     }
 }
 
-@media (max-width: 1024px) {
-    header .logo {
-        width: 400px;
-    }
-    
+@media (max-width: 1280px) {
     header ul li {
         padding: 10px 20px;
         font-size: 14px;
@@ -288,4 +257,16 @@ header ul li:nth-child(6) {
     color: #ff4444;
     background-color: rgba(255, 68, 68, 0.2);
     transform: scale(1.1);
+}
+
+@media (max-width: 1280px) {
+    .logo img{
+        width: 240px;
+    }
+}
+
+@media (max-width: 512px) {
+   .logo img{
+       width: 200px;
+   }
 }
