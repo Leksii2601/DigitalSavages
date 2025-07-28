@@ -1,7 +1,6 @@
 header {
     color: white;
     padding: 12px 0;
-   
 }
 
 header .logo {
@@ -10,8 +9,6 @@ header .logo {
     display: inline-block;
     position: relative;
 }
-
-
 
 /* Button (li) styles + "fall in" animation */
 header ul li {
@@ -25,23 +22,31 @@ header ul li {
     cursor: pointer;
     transition: transform 0.2s cubic-bezier(.43,1.09,.66,1.09), box-shadow 0.2s;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    animation: fall-in 0.7s cubic-bezier(.43,1.09,.66,1.09) backwards;
+    animation: fall-in-bounce 1.4s cubic-bezier(.43,1.09,.66,1.09) backwards;
 }
 
-@keyframes fall-in {
+@keyframes fall-in-bounce {
     0% {
         opacity: 0;
-        transform: translateY(-60px) scaleY(0.5) rotate(-10deg);
+        transform: translateY(-80px) scaleY(0.3) rotate(-15deg);
         box-shadow: none;
     }
-    60% {
+    40% {
         opacity: 1;
-        transform: translateY(10px) scaleY(1.2) rotate(2deg);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        transform: translateY(15px) scaleY(1.3) rotate(3deg);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+    65% {
+        transform: translateY(-8px) scaleY(0.9) rotate(-2deg);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
     80% {
-        transform: translateY(-4px) scaleY(0.98) rotate(-1deg);
-        box-shadow: 0 3px 8px rgba(0,0,0,0.09);
+        transform: translateY(4px) scaleY(1.05) rotate(1deg);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    92% {
+        transform: translateY(-2px) scaleY(0.98) rotate(-0.5deg);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.06);
     }
     100% {
         opacity: 1;
@@ -64,6 +69,31 @@ header ul li:focus {
     box-shadow: 0 6px 16px rgba(59, 130, 246, 0.10);
     background-color: #f1f1fc;
     outline: none;
+}
+
+/* Додаємо затримку для кожної кнопки */
+header ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+header ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+header ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+header ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+header ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+header ul li:nth-child(6) {
+    animation-delay: 0.6s;
 }
 
 /* Mobile Navigation Styles */
@@ -132,8 +162,8 @@ header ul li:focus {
     .hamburger {
         display: none !important;
     }
-    
 }
+
 @media (max-width: 1024px) {
     header .logo {
         width: 400px;
