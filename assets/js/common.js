@@ -38,3 +38,68 @@ function closeMobileMenu() {
     mobileMenu.classList.remove('flex');
     hamburger.classList.remove('active');
 }
+
+// ================================================
+// LANGUAGE SWITCHER FUNCTIONS
+// ================================================
+
+function toggleLanguageMenu() {
+    const languageMenu = document.getElementById('languageMenu');
+    const languageButton = document.querySelector('.language-button');
+    
+    if (languageMenu.classList.contains('hidden')) {
+        languageMenu.classList.remove('hidden');
+        languageButton.classList.add('active');
+    } else {
+        languageMenu.classList.add('hidden');
+        languageButton.classList.remove('active');
+    }
+}
+
+function changeLanguage(lang) {
+    const currentLangElement = document.querySelector('.current-lang');
+    const languageMenu = document.getElementById('languageMenu');
+    const languageButton = document.querySelector('.language-button');
+    
+    // Оновлюємо відображення поточної мови
+    if (lang === 'en') {
+        currentLangElement.textContent = 'EN';
+        translatePage('en'); // Використовуємо функцію з translations.js
+        console.log('Змінено мову на English');
+    } else if (lang === 'uk') {
+        currentLangElement.textContent = 'UA';
+        translatePage('uk'); // Використовуємо функцію з translations.js
+        console.log('Змінено мову на Українська');
+    }
+    
+    // Закриваємо меню
+    languageMenu.classList.add('hidden');
+    languageButton.classList.remove('active');
+}
+
+// Закриття меню мови при кліку поза ним
+document.addEventListener('click', function(event) {
+    const languageSwitcher = document.querySelector('.language-switcher');
+    const languageMenu = document.getElementById('languageMenu');
+    const languageButton = document.querySelector('.language-button');
+    
+    if (languageSwitcher && !languageSwitcher.contains(event.target)) {
+        if (languageMenu && !languageMenu.classList.contains('hidden')) {
+            languageMenu.classList.add('hidden');
+            languageButton.classList.remove('active');
+        }
+    }
+});
+
+// Завантаження збереженої мови при завантаженні сторінки
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'uk';
+    const currentLangElement = document.querySelector('.current-lang');
+    
+    // Оновлюємо кнопку мови після завантаження header
+    setTimeout(() => {
+        if (currentLangElement) {
+            currentLangElement.textContent = savedLanguage === 'en' ? 'EN' : 'UA';
+        }
+    }, 100);
+});

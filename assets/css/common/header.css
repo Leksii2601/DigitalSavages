@@ -3,18 +3,38 @@ header {
     padding: 12px 0;
     background: rgba(167, 167, 167, 0.266);
     backdrop-filter: blur(9px);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+nav {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
 header .logo {
     width: 500px;
+    max-width: 100%;
     height: auto;
     display: inline-block;
     position: relative;
 }
 
+header .logo img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Button (li) styles + "fall in" animation */
 header ul li {
-    padding: 12px 25px;
+    padding: 12px 23px;
     background-color: white;
     color: black;
     border-radius: 14px;
@@ -24,42 +44,41 @@ header ul li {
     cursor: pointer;
     transition: transform 0.2s cubic-bezier(.43,1.09,.66,1.09), box-shadow 0.2s;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    animation: fall-in-bounce 1.4s cubic-bezier(.43,1.09,.66,1.09) backwards;
+    animation: fall-in-bounce 1.4s cubic-bezier(.43,1.09,.66,1.09) towards;
 }
 
 @keyframes fall-in-bounce {
     0% {
         opacity: 0;
-        transform: translateY(-80px) scaleY(0.3) rotate(-15deg);
+        transform: translateY(-80px) scaleY(0.3);
         box-shadow: none;
     }
     40% {
         opacity: 1;
-        transform: translateY(15px) scaleY(1.3) rotate(3deg);
+        transform: translateY(15px) scaleY(1.3);
         box-shadow: 0 12px 32px rgba(0,0,0,0.2);
     }
     65% {
-        transform: translateY(-8px) scaleY(0.9) rotate(-2deg);
+        transform: translateY(-8px) scaleY(0.9);
         box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
     80% {
-        transform: translateY(4px) scaleY(1.05) rotate(1deg);
+        transform: translateY(4px) scaleY(1.05);
         box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
     92% {
-        transform: translateY(-2px) scaleY(0.98) rotate(-0.5deg);
+        transform: translateY(-2px) scaleY(0.98);
         box-shadow: 0 3px 8px rgba(0,0,0,0.06);
     }
     100% {
         opacity: 1;
-        transform: translateY(0) scaleY(1) rotate(0deg);
+        transform: translateY(0) scaleY(1);
         box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 }
 
 /* Press effect for button */
 header ul li:active {
-    transform: scale(0.93) translateY(3px);
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     background-color: #f3f4f6;
 }
@@ -67,42 +86,97 @@ header ul li:active {
 /* Optional: On hover, slightly lift */
 header ul li:hover,
 header ul li:focus {
-    transform: translateY(-2px) scale(1.03);
     box-shadow: 0 6px 16px rgba(59, 130, 246, 0.10);
     background-color: #f1f1fc;
     outline: none;
 }
 
-/* Додаємо затримку для кожної кнопки */
+/* Hover ефекти для кожної кнопки з урахуванням rotate */
+header ul li:nth-child(1):hover {
+    transform: rotate(2deg) translateY(-2px) scale(1.03);
+}
+
+header ul li:nth-child(2):hover {
+    transform: rotate(-3deg) translateY(-2px) scale(1.03);
+}
+
+header ul li:nth-child(3):hover {
+    transform: rotate(4deg) translateY(-2px) scale(1.03);
+}
+
+header ul li:nth-child(4):hover {
+    transform: rotate(-2deg) translateY(-2px) scale(1.03);
+}
+
+header ul li:nth-child(5):hover {
+    transform: rotate(3deg) translateY(-2px) scale(1.03);
+}
+
+header ul li:nth-child(6):hover {
+    transform: rotate(-4deg) translateY(-2px) scale(1.03);
+}
+
+/* Active ефекти для кожної кнопки */
+header ul li:nth-child(1):active {
+    transform: rotate(2deg) scale(0.93) translateY(3px);
+}
+
+header ul li:nth-child(2):active {
+    transform: rotate(-3deg) scale(0.93) translateY(3px);
+}
+
+header ul li:nth-child(3):active {
+    transform: rotate(4deg) scale(0.93) translateY(3px);
+}
+
+header ul li:nth-child(4):active {
+    transform: rotate(-2deg) scale(0.93) translateY(3px);
+}
+
+header ul li:nth-child(5):active {
+    transform: rotate(3deg) scale(0.93) translateY(3px);
+}
+
+header ul li:nth-child(6):active {
+    transform: rotate(-4deg) scale(0.93) translateY(3px);
+}
+
+/* Додаємо затримку та початковий rotate для кожної кнопки */
 header ul li:nth-child(1) {
     animation-delay: 0.1s;
+    transform: rotate(2deg);
 }
 
 header ul li:nth-child(2) {
     animation-delay: 0.2s;
+    transform: rotate(-3deg);
 }
 
 header ul li:nth-child(3) {
     animation-delay: 0.3s;
+    transform: rotate(4deg);
 }
 
 header ul li:nth-child(4) {
     animation-delay: 0.4s;
+    transform: rotate(-2deg);
 }
 
 header ul li:nth-child(5) {
     animation-delay: 0.5s;
+    transform: rotate(3deg);
 }
 
 header ul li:nth-child(6) {
     animation-delay: 0.6s;
+    transform: rotate(-4deg);
 }
 
 /* Mobile Navigation Styles */
 .brand-mobile-navigation {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(15px);
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .brand-mobile-navigation ul li {
@@ -259,14 +333,143 @@ header ul li:nth-child(6) {
     transform: scale(1.1);
 }
 
+/* ================================================
+   LANGUAGE SWITCHER STYLES
+   ================================================ */
+
+.language-switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: -140px;
+    margin-right:70px;
+    z-index: 1001;
+}
+
+.language-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.language-button:hover {
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.10);
+    background-color: #f1f1fc;
+    transform: translateY(-2px);
+}
+
+.language-button .current-lang {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.language-arrow {
+    transition: transform 0.3s ease;
+}
+
+.language-button.active .language-arrow {
+    transform: rotate(180deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+    min-width: 180px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    animation: dropdown-appear 0.3s ease;
+    z-index: 1100;
+}
+
+@keyframes dropdown-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-dropdown.hidden {
+    display: none;
+}
+
+.language-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    animation: none;
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+    transform: none !important;
+}
+
+.language-dropdown li:hover {
+    background-color: #f1f1fc;
+    box-shadow: none;
+    transform: none !important;
+}
+
+.language-dropdown li .flag {
+    font-size: 20px;
+}
+
+.language-dropdown li.active {
+    background-color: #e8e8ff;
+    color: #AB5DFF;
+}
+
 @media (max-width: 1280px) {
     .logo img{
         width: 240px;
+    }
+    
+    .language-switcher {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    
+    .language-button {
+        padding: 8px 12px;
     }
 }
 
 @media (max-width: 512px) {
    .logo img{
        width: 200px;
+   }
+   
+   .language-button {
+       padding: 6px 10px;
+   }
+   
+   .language-button .current-lang {
+       font-size: 12px;
    }
 }

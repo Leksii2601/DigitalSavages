@@ -1,161 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Savages</title>
+    <link rel="stylesheet" href="assets/css/common/header.css" />
+    <link rel="stylesheet" href="assets/css/common/footer.css" />
+    <link rel="stylesheet" href="assets/css/pages/main.css" />
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Savages</title>
-  <link rel="stylesheet" href="assets/css/common/header.css">
-  <link rel="stylesheet" href="assets/css/common/footer.css">
-  <link rel="stylesheet" href="assets/css/pages/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-  <div id="header-container"></div>
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Digital Savages <br><span>studio</span></h1>
-        <h2>creative code. wild ideas</h2>
-      </div>
-    </section>
-  <section class="latest-news" id="latest-news">
-  <!-- Title -->
-  <h2 class="section-title">
-    Latest news
-  </h2>
-  <!-- News carousel -->
-  <div class="carousel-container">
-    <!-- Left arrow -->
-    <button class="carousel-arrow carousel-arrow-left">
-      &#60;
-    </button>
-    <!-- News cards -->
-    <div class="carousel-content">
-      <div class="news-card"></div>
-      <div class="news-card"></div>
-    </div>
-    <!-- Right arrow -->
-    <button class="carousel-arrow carousel-arrow-right">
-      &#62;
-    </button>
-  </div>
-</section>
-
-<section class="our-games" id="our-games">
-  <!-- Title -->
-  <h2 class="section-title">
-    Our Games
-  </h2>
-  <!-- Games carousel -->
-  <div class="carousel-container">
-    <!-- Left arrow -->
-    <button class="carousel-arrow carousel-arrow-left">
-      &#60;
-    </button>
-    <!-- Games cards -->
-    <div class="carousel-content">
-      <img src="/assets/images/main-page/ecodino.png" alt="Опис фото" class="game-card" />
-      <div class="game-card game-card-placeholder"></div>
-      <div class="game-card game-card-placeholder"></div>
-    </div>
-    <!-- Right arrow -->
-    <button class="carousel-arrow carousel-arrow-right">
-      &#62;
-    </button>
-  </div>
-</section>
-
-
-    </section>
-    <section class="about-us" id="about-us">
-      <!-- Title -->
-      <h2 class="about-title">
-        About Us
-      </h2>
-
-      <section class="team-section">
-        <div class="team-list">
-          <!-- Ilona Keno -->
-          <div class="team-member">
-            <div class="member-photo ilona-photo">
-              <img src="assets/images/main-page/ilona-keno.png" alt="Ilona Keno" />
-            </div>
-            <div class="member-info-straight">
-              <h3 class="member-name">ILONA KENO</h3>
-              <p class="member-role">CEO & co-founder</p>
-              <p class="member-desc">I choose to try and take risks over sitting still. If you want to meet — you
-                probably will have to catch me all around the world, I love travelling, inspire from my trips, analyse
-                nowadays problems, research, gather ideas and make them real asap. But besides real world I do love
-                travelling to fantasy (and more often non-fic) one in books, so here you have the main bookdragon and
-                researcher in the company.</p>
-            </div>
-          </div>
-          <!-- Oleksandr Durmanenko -->
-          <div class="team-member reverse">
-            <div class="member-photo oleksandr-photo">
-              <img src="assets/images/main-page/oleksandr-durmanenko.png" alt="Oleksandr Durmanenko" />
-            </div>
-            <div class="member-info-reverse">
-              <h3 class="member-name">OLEKSANDR DURMANENKO</h3>
-              <p class="member-role">CTO & co-founder</p>
-              <p class="member-desc">I am Oleksandr, aka PADO, CTO and one of those who dreams of turning ideas into
-                living game worlds. Games are my everything: playing, analysing, creating. And I also just love cats. So
-                if you find a fluffy character somewhere in our game, you know whose work it is.
-              </p>
-            </div>
-          </div>
+  <body>
+    <div id="header-container"></div>
+    <main>
+      <section class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+          <h1 data-aos="fade-down" data-aos-delay="200">
+            Digital Savages <br /><span>studio</span>
+          </h1>
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-translate="hero_subtitle"
+          >
+            creative code. wild ideas
+          </h2>
+          <div id="our_games"></div>
         </div>
-        <div class="team-list">
-          <!-- Ilona Keno -->
-          <div class="team-member">
-            <div class="member-photo ilona-photo">
-              <img src="assets/images/main-page/denys-kyshniruk.png" alt="Denys Kushniruk" />
-            </div>
-            <div class="member-info-straight">
-              <h3 class="member-name">Denys Kushniruk</h3>
-              <p class="member-role">3D-designer & co-founder</p>
-              <p class="member-desc">Hey, I’m Denys — a 3D artist and game developer who loves turning ideas into
-                playable, visual experiences. I’m all about clean topology, satisfying game loops, and finding that
-                perfect lighting angle at 2AM.
-                Beyond the screen, I’m into sports, dogs, music that never stops playing, and chasing new places
-                whenever I can. If you see a tiny detail in a game and wonder “why is this here?” — it might just be my
-                favorite part.</p>
-            </div>
-          </div>
-          <!-- Oleksandr Durmanenko -->
-          <div class="team-member reverse">
-            <div class="member-photo oleksandr-photo">
-              <img src="assets/images/main-page/oleksii-dashchuk.png" alt="Oleksii Dashchuk" />
-            </div>
-            <div class="member-info-reverse">
-              <h3 class="member-name">Oleksii Dashchuk</h3>
-              <p class="member-role">Front-end developer & co-founder</p>
-              <p class="member-desc">Hey, I’m Oleksii — frontend developer turning our team’s presence into a smooth,
-                interactive digital space. From clean interfaces to seamless scrolls — I make sure it all feels right.
-
-                I’m into fast, responsive design, love playing with motion, and crafting websites that tell our story.
-
-                Off the screen, I’m into volleyball, books, travel, and music — and always ready to prototype something
-                just for the fun of it.
-
-
-              </p>
-            </div>
-          </div>
-        </div>
-
       </section>
-    </section>
-  </main>
-  <div id="footer-container"></div>
-  <script src="assets/js/common.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-</body>
 
+      <section class="Eco-Dino">
+        <div class="title-img" data-aos="zoom-in" data-aos-duration="1000">
+          <img src="/assets/images/main-page/eco-dino.png" alt="" />
+        </div>
+        <div class="eco-dino-wrapper">
+          <div class="wrapper">
+            <div
+              class="graphics-img"
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              <img
+                src="/assets/images/main-page/eco-dino-graphics.png"
+                alt="Eco Dino graphics"
+              />
+            </div>
+            <div
+              class="eco-dino-text-wrapper"
+              data-aos="fade-left"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
+              <h1 data-translate="ecodino_title">
+                <strong>EcoDino: MISSION EARTH</strong> — екологічно навчальна
+                мобільна гра, яка робить науку веселою!
+              </h1>
+              <p data-translate="ecodino_desc1">
+                Ми поєднали гейміфікацію та науковий підхід, щоб створити
+                інструмент, який легко зрозуміти, ефективно вивчати та весело
+                грати! Забудьте про нудні уроки. З нашою грою ваша дитина буде
+                рятувати планету, збираючи сміття, висаджуючи дерева та вивчаючи
+                важливі екологічні факти.
+              </p>
+              <p data-translate="ecodino_desc2">
+                Спробуйте гру вже сьогодні! Завантажте її за посиланням в шапці
+                профілю та почніть місію порятунку Землі разом з EcoDino!
+              </p>
+              <div class="d-wrapper" data-aos="zoom-in" data-aos-delay="500">
+                <a href="#">
+                  <div class="downoload-button" data-translate="download_game">
+                    Завантажити гру
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="about_us"></div>
+      </section>
+
+      <section class="about-us">
+        <!-- Title -->
+        <h2
+          class="about-title"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+          data-translate="about_title"
+        >
+          Про нас
+        </h2>
+
+        <section class="team-section">
+          <div class="team-list">
+            <!-- Ilona Keno -->
+            <div
+              class="team-member"
+              data-aos="fade-up"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              <div class="member-photo ilona-photo">
+                <img
+                  src="assets/images/main-page/ilona-keno.png"
+                  alt="Ilona Keno"
+                />
+              </div>
+              <div class="member-info-straight">
+                <p class="member-name" data-translate="ilona_name">
+                  Ілона Кеньо
+                </p>
+                <p class="member-role" data-translate="ilona_role">
+                  Генеральний директор та співзасновник
+                </p>
+                <p class="member-desc" data-translate="ilona_desc">
+                  Я обираю ризикувати, а не сидіти на місці. Якщо ви хочете
+                  зустрітися — вам, мабуть, доведеться ловити мене по всьому
+                  світу. Я люблю подорожувати, надихатися своїми поїздками,
+                  аналізувати сучасні проблеми, досліджувати, збирати ідеї та
+                  втілювати їх у життя якомога швидше. Але окрім реального
+                  світу, я люблю подорожувати у фентезійний (а частіше
+                  нехудожній) світ у книгах, тож ось вам головний книжковий
+                  дракон та дослідник у компанії.
+                </p>
+              </div>
+            </div>
+            <!-- Oleksandr Durmanenko -->
+            <div
+              class="team-member"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              <div class="member-photo oleksandr-photo">
+                <img
+                  src="assets/images/main-page/oleksandr-durmanenko.png"
+                  alt="Oleksandr Durmanenko"
+                />
+              </div>
+              <div class="member-info-straight">
+                <p class="member-name" data-translate="oleksandr_name">
+                  Олександр Дурманенко
+                </p>
+                <p class="member-role" data-translate="oleksandr_role">
+                  Технічний директор та співзасновник
+                </p>
+                <p class="member-desc" data-translate="oleksandr_desc">
+                  Один з тих, хто мріє перетворити ідеї на живі ігрові світи.
+                  Ігри — це його все: грати, аналізувати, творити. А ще
+                  <strong>aka PADO</strong> просто обожнює котів. Тому якщо десь
+                  в нашій грі ви знайдете пухнастого персонажа, то знайте, що це
+                  його робота.
+                </p>
+              </div>
+            </div>
+
+            <!-- Denys Kushniruk -->
+            <div
+              class="team-member"
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
+              <div class="member-photo ilona-photo">
+                <img
+                  src="assets/images/main-page/denys-kyshniruk.png"
+                  alt="Denys Kushniruk"
+                />
+              </div>
+              <div class="member-info-straight">
+                <p class="member-name" data-translate="denys_name">
+                  Денис Кушнірук
+                </p>
+                <p class="member-role" data-translate="denys_role">
+                  3D-дизайнер та співзасновник
+                </p>
+                <p class="member-desc" data-translate="denys_desc">
+                  Перетворює присутність нашої команди на плавний інтерактивний
+                  цифровий простір. Від чистих інтерфейсів до «невагомих
+                  скролів» — він запевнить кожного, що все виглядає правильно.
+                  Захоплюється швидким чутливим дизайном, любить грати з рухом і
+                  створювати вебсайти, які розповідають історію. Поза екраном
+                  грає волейбол, читає книги, подорожує та цікавиться музикою.
+                </p>
+              </div>
+            </div>
+            <!-- Oleksii Dashchuk -->
+            <div
+              class="team-member"
+              data-aos="fade-up"
+              data-aos-delay="400"
+              data-aos-duration="1000"
+            >
+              <div class="member-photo oleksandr-photo">
+                <img
+                  src="assets/images/main-page/oleksii-dashchuk.png"
+                  alt="Oleksii Dashchuk"
+                />
+              </div>
+              <div class="member-info-straight">
+                <p class="member-name" data-translate="oleksii_name">
+                  Олексій Дащук
+                </p>
+                <p class="member-role" data-translate="oleksii_role">
+                  Фронтенд-розробник та співзасновник
+                </p>
+                <p class="member-desc" data-translate="oleksii_desc">
+                  Перетворює присутність нашої команди на плавний інтерактивний
+                  цифровий простір. Від чистих інтерфейсів до «невагомих
+                  скролів» — він запевнить кожного, що все виглядає правильно.
+                  Захоплюється швидким чутливим дизайном, любить грати з рухом і
+                  створювати вебсайти, які розповідають історію. Поза екраном
+                  грає волейбол, читає книги, подорожує та цікавиться музикою.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div id="join_us"></div>
+      </section>
+
+      <section class="Eco-Dino join-us">
+        <div class="sec-title" data-aos="fade-down" data-aos-duration="1000">
+          <h2 data-translate="join_title">Приєднуйся</h2>
+        </div>
+        <div class="eco-dino-wrapper">
+          <div class="wrapper">
+            <div
+              class="graphics-img"
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              <img
+                src="/assets/images/main-page/eco-dino-graphics-two.png"
+                alt="Eco Dino graphics"
+              />
+            </div>
+            <div
+              class="eco-dino-text-wrapper"
+              data-aos="fade-left"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
+              <h1 class="title" data-translate="join_subtitle">
+                хочеш приєднатися до нашої команди, яка втілює дитячі мрії в
+                реальність?
+              </h1>
+              <p data-translate="join_desc">
+                Якшо ти бачиш себе частиною нашої команди, мрієш спробувати себе
+                в ролі розробника ігор чи просто маєш нові ідеї, тоді запрошуємо
+                саме тебе (так, так, ТЕБЕ) заповнити невелику анкету для
+                зворотнього зв’язку.
+              </p>
+              <strong data-translate="join_waiting">
+                Чекаємо саме на тебе!</strong
+              >
+              <div class="d-wrapper" data-aos="zoom-in" data-aos-delay="500">
+                <a href="#">
+                  <div
+                    class="downoload-button"
+                    data-translate="feedback_button"
+                  >
+                    Зворотній зв'язок
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="assets/js/translations.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease-out-cubic",
+        once: true,
+        mirror: true,
+        offset: 50,
+      });
+    </script>
+  </body>
 </html>

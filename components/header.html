@@ -1,40 +1,136 @@
 <header class="fixed top-0 left-0 right-0 z-menu">
-  <nav class="flex flex-row p-0 w-full justify-between xl:justify-center items-center px-4 xl:px-0" id="brand-nav">
+  <nav
+    class="flex flex-row p-0 w-full justify-between xl:justify-center items-center px-4 xl:px-0"
+    id="brand-nav"
+  >
     <!-- Logo -->
     <a aria-current="page" class="xl:order-2 transition-all logo" href="/">
-      <img src="/assets/images/logo.png" alt="">
+      <img src="/assets/images/logo.png" alt="" />
     </a>
     <!-- Main navigation (desktop) -->
-   <ul class="hidden xl:flex w-full list-none m-0 p-0 flex-row order-1 justify-end xl:gap-4 2xl:gap-12 px-4 2xl:px-8 -mt-4">
-  <li class="rotate-[2deg]"><a href="#about-us">About Us</a></li>
-  <li class="-rotate-[5deg]"><a href="#our-games">Our Games</a></li>
-  <li class="rotate-[8deg]"><a href="#latest-news">Latest News</a></li>
-</ul>
-<ul class="hidden xl:flex w-full list-none m-0 p-0 flex-row order-3 justify-start xl:gap-4 2xl:gap-12 px-4 2xl:px-8 -mt-4">
-  <li class="rotate-[3deg]"><a href="/join-us/">Join Us</a></li>
-  <li class="-rotate-[6deg]"><a href="/news/">Support Us</a></li>
-  <li class="rotate-[0deg]"><a href="/contact-us/">Contact Us</a></li>
-</ul>
+    <ul
+      class="hidden xl:flex w-full list-none m-0 p-0 flex-row order-1 justify-end xl:gap-4 2xl:gap-12 px-4 2xl:px-8 -mt-4"
+    >
+      <li class="rotate-[2deg]">
+        <a href="#about_us" data-translate="nav_about">About Us</a>
+      </li>
+      <li class="-rotate-[5deg]">
+        <a href="#our_games" data-translate="nav_games">Our Games</a>
+      </li>
+      <li class="rotate-[8deg]">
+        <a href="#latest-news" data-translate="nav_news">Latest News</a>
+      </li>
+    </ul>
+    <ul
+      class="hidden xl:flex w-full list-none m-0 p-0 flex-row order-3 justify-start xl:gap-4 2xl:gap-12 px-4 2xl:px-8 -mt-4"
+    >
+      <li class="rotate-[3deg]">
+        <a href="#join_us" data-translate="nav_join">Join Us</a>
+      </li>
+      <li class="-rotate-[6deg]">
+        <a href="/news/" data-translate="nav_collab">Collab with us</a>
+      </li>
+    </ul>
+
+    <!-- Language Switcher (Desktop & Mobile) -->
+    <div class="language-switcher xl:order-4">
+      <button class="language-button" onclick="toggleLanguageMenu()">
+        <span class="current-lang">EN</span>
+        <svg
+          class="language-arrow"
+          width="12"
+          height="8"
+          viewBox="0 0 12 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L6 6L11 1"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <ul class="language-dropdown hidden" id="languageMenu">
+        <li onclick="changeLanguage('en')">
+          <span class="flag">🇬🇧</span>
+          <span>English</span>
+        </li>
+        <li onclick="changeLanguage('uk')">
+          <span class="flag">🇺🇦</span>
+          <span>Українська</span>
+        </li>
+      </ul>
+    </div>
+
     <!-- Mobile menu toggle button -->
-    <span class="cursor-pointer no-underline inline-block xl:hidden z-menu hamburger" role="button" onclick="toggleMobileMenu()">
+    <span
+      class="cursor-pointer no-underline inline-block xl:hidden z-menu hamburger"
+      role="button"
+      onclick="toggleMobileMenu()"
+    >
       <span></span>
       <span></span>
       <span></span>
     </span>
     <!-- Mobile navigation menu -->
-    <div class="w-screen h-screen fixed top-0 left-0 right-0 items-center justify-center xl:hidden flex-col brand-mobile-navigation brand-mobile-navigation-closed hidden" id="mobileMenu">
+    <div
+      class="w-screen h-screen fixed top-0 left-0 right-0 items-center justify-center xl:hidden flex-col brand-mobile-navigation brand-mobile-navigation-closed hidden"
+      id="mobileMenu"
+    >
       <!-- Close button -->
-      <div class="close-button" onclick="closeMobileMenu()" title="Закрити меню">
+      <div
+        class="close-button"
+        onclick="closeMobileMenu()"
+        title="Закрити меню"
+      >
         ✕
       </div>
       <ul class="list-none m-0 p-0 text-center flex flex-col gap-5 md:gap-4">
-        <li><a href="/" onclick="closeMobileMenu()">Home</a></li>
-        <li><a href="#about-us" onclick="closeMobileMenu()">About Us</a></li>
-        <li><a href="#our-games" onclick="closeMobileMenu()">Our Games</a></li>
-        <li><a href="#latest-news" onclick="closeMobileMenu()">Latest News</a></li>
-        <li><a href="/join-us/" onclick="closeMobileMenu()">Join Us</a></li>
-        <li><a href="/news/" onclick="closeMobileMenu()">Support Us</a></li>
-        <li><a href="/contact-us/" onclick="closeMobileMenu()">Contact Us</a></li>
+        <li>
+          <a href="/" onclick="closeMobileMenu()" data-translate="nav_home"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#about_us"
+            onclick="closeMobileMenu()"
+            data-translate="nav_about"
+            >About Us</a
+          >
+        </li>
+        <li>
+          <a
+            href="#our_games"
+            onclick="closeMobileMenu()"
+            data-translate="nav_games"
+            >Our Games</a
+          >
+        </li>
+        <li>
+          <a
+            href="#latest-news"
+            onclick="closeMobileMenu()"
+            data-translate="nav_news"
+            >Latest News</a
+          >
+        </li>
+        <li>
+          <a
+            href="#join_us"
+            onclick="closeMobileMenu()"
+            data-translate="nav_join"
+            >Join Us</a
+          >
+        </li>
+        <li>
+          <a href="#" onclick="closeMobileMenu()" data-translate="nav_contact"
+            >Contact Us</a
+          >
+        </li>
       </ul>
     </div>
   </nav>

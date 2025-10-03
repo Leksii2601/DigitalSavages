@@ -1,0 +1,773 @@
+
+@font-face {
+  font-family: 'luckiest-guy';
+  src: url(/assets/fonts/luckiestguyrus_bel_ukr.otf) format('opentype');
+}
+:root {
+  --main-font: 'Montserrat','Poppins', sans-serif;
+  --button-color:#AB5DFF;
+  --name-font: 'luckiest-guy';
+  --name-color:#B69AFD;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body{
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Z-index utilities */
+.z-menu {
+    z-index: 1000;
+}
+
+.hero {
+    background-color: #000000;
+    height: 100vh;
+}
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    font-size: 60px;
+    font-family: var( --main-font);
+    text-align: center;
+    flex-direction: column;
+}
+.hero-content h1 {
+    font-weight: 700;
+}
+.hero-content h1 span {
+  font-weight: 200;
+}
+.hero-content h2 {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 60px;
+}
+.Eco-Dino .title-img {
+    width: 100%;
+    height: auto;
+    margin: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+}
+.Eco-Dino .title-img img{
+  width: 70%;
+}
+.Eco-Dino .eco-dino-wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Eco-Dino .wrapper{
+  display: flex;
+  width: 80%;
+}
+.eco-dino-wrapper .graphics-img img{
+  width: 1150px;
+}
+.eco-dino-text-wrapper{
+  max-width: 600px;
+  margin-left: 50px;
+  font-size:20px;
+  gap:15px;
+  font-family: var(--main-font);
+}
+.d-wrapper{
+  width: 100%;
+}
+.downoload-button{
+  margin-top: 25px;
+  padding: 12px 34px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+.downoload-button:hover {
+  background-color: #9c4de6;
+
+}
+.eco-dino-wrapper .eco-dino-text-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  padding: 0 20px;
+}
+.eco-dino-wrapper .eco-dino-text-wrapper h1{
+  width: 100%;
+  text-align: start;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hero-content {
+        font-size: 32px;
+        padding: 0 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+    
+    .hero-content h2 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        font-size: 24px;
+    }
+    
+    .hero-content h1 {
+        font-size: 24px;
+    }
+    
+    .hero-content h2 {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+}
+
+
+/* Section headers responsive */
+@media (max-width: 768px) {
+    .Latest-News,
+    .Our-Games,
+    .about-us {
+        padding: 30px 15px;
+    }
+    
+    .Latest-News h2,
+    .Our-Games h2,
+    .about-us h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Latest-News,
+    .Our-Games,
+    .about-us {
+        padding: 20px 10px;
+    }
+    
+    .Latest-News h2,
+    .Our-Games h2,
+    .about-us h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+}
+
+.about-title {
+  font-size: 4.5rem;
+  font-weight: 100;
+  font-family: var(--name-font);
+  color: #AB5DFF;
+  padding: 8px 16px;
+  margin-bottom: 40px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.team-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  align-items: center;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+.member-photo {
+    width: 420px;
+    height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+    margin-bottom: 0;
+}
+
+.team-member.reverse .member-photo {
+    margin-right: 0;
+    margin-left: 40px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: visible;
+}
+
+.member-info-straight {
+    text-align: start;
+    min-width: 260px;
+    width: 850px;
+}
+
+.member-name {
+    font-size: 3.5rem;
+    font-weight: 100;
+    margin-bottom: 8px;
+    font-family: var(--name-font);
+    color: var(--name-color);
+    letter-spacing: 3px;    
+}
+
+.member-role {
+    font-size: 1.3rem;
+    color: #666;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-family: var(--main-font);
+}
+
+.member-desc {
+    color: #888;
+    font-size: 1.2rem;
+    font-family: var(--main-font);
+}
+.Eco-Dino .title{
+  font-size: 2.8rem;
+  font-weight: 100;
+  text-align: center;
+  font-family: var(--name-font);
+  color: var(--name-color);
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  line-height: 45px;
+}
+.Eco-Dino .title h2{
+  width: 70%;
+}
+.join-us{
+  margin-top:150px;
+}
+.join-us .sec-title{
+  font-size: 4.5rem;
+  font-weight: 100;
+  font-family: var(--name-font);
+  color: #AB5DFF;
+  padding: 8px 16px;
+  margin-bottom: 40px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.join-us .graphics-img{
+  width: 480px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.join-us .eco-dino-text-wrapper{
+  align-items: start;
+}
+
+
+/* Team section responsive */
+@media (max-width: 1024px) {
+    .team-member {
+        width: 95%;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .team-member.reverse {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .member-photo {
+        margin-right: 0;
+        margin-left: 0;
+        width: 300px;
+        height: 270px;
+    }
+    
+    .team-member.reverse .member-photo {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    .member-info-straight,
+    .member-info-reverse {
+        text-align: center;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-list {
+        gap: 40px;
+    }
+    
+    .member-photo {
+        width: 250px;
+        height: 225px;
+    }
+    
+    .member-name {
+        font-size: 2.5rem;
+    }
+    
+    .member-role {
+        font-size: 1rem;
+    }
+    
+    .member-desc {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-list {
+        gap: 30px;
+    }
+    
+   .member-photo {
+        width: 180px;
+        height: 160px;
+    }
+    
+    .member-name {
+        font-size: 2rem;
+        margin-bottom: 6px;
+    }
+    
+    .member-role {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .member-desc {
+        font-size: 0.8rem;
+    }
+    
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+}
+
+/* News and Games carousel responsive */
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 32px;
+}
+
+.carousel-content {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.news-card,
+.game-card {
+    flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+    .carousel-content {
+        gap: 20px;
+    }
+    
+    .carousel-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .carousel-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    /* Hide carousel arrows on mobile */
+    .carousel-container button {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-content {
+        gap: 15px;
+    }
+}
+
+/* Override Tailwind classes for responsiveness */
+@media (max-width: 768px) {
+    .w-\[540px\] {
+        width: 300px !important;
+    }
+    
+    .h-\[350px\] {
+        height: 200px !important;
+    }
+    
+    .w-\[340px\] {
+        width: 280px !important;
+    }
+    
+    .h-\[250px\] {
+        height: 180px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .w-\[540px\] {
+        width: 280px !important;
+    }
+    
+    .h-\[350px\] {
+        height: 180px !important;
+    }
+    
+    .w-\[340px\] {
+        width: 250px !important;
+    }
+    
+    .h-\[250px\] {
+        height: 160px !important;
+    }
+    
+    .text-4xl {
+        font-size: 1.5rem !important;
+    }
+    
+    .mb-8 {
+        margin-bottom: 1rem !important;
+    }
+    
+    .gap-8 {
+        gap: 1rem !important;
+    }
+}
+
+/* Additional responsive improvements */
+@media (max-width: 320px) {
+    .hero-content h1 {
+        font-size: 20px;
+    }
+    
+    .hero-content h2 {
+        font-size: 16px;
+    }
+    
+    .Latest-News h2,
+    .Our-Games h2,
+    .about-us h2 {
+        font-size: 24px;
+    }
+    
+    .member-name {
+        font-size: 1.5rem;
+    }
+    
+    .w-\[540px\] {
+        width: 260px !important;
+    }
+    
+    .w-\[340px\] {
+        width: 220px !important;
+    }
+    
+    
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+    
+    .hero-content {
+        height: auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .hero-content h2 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+}
+@media (max-width:512px) {
+  .member-info-straight, .member-info-reverse {
+    text-align: center;
+    width: 100%;
+  }
+    
+}
+/* Section styles */
+.latest-news,
+.our-games {
+  padding: 48px 20px;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+/* Section title */
+.section-title {
+  font-size: 64px;
+  font-weight: 600;
+  padding: 8px 16px;
+  display: inline-block;
+  margin-bottom: 32px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Carousel container */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Carousel arrows */
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  color: #4b5563;
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.carousel-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Carousel content */
+.carousel-content {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 16px 0;
+}
+
+/* Hide scrollbar */
+.carousel-content::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* News cards */
+.news-card {
+  width: 540px;
+  height: 350px;
+  background-color: #d1d5db;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+ transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 7px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Game cards */
+.game-card {
+  width: 340px;
+  height: 250px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.game-card-placeholder {
+  background-color: #d1d5db;
+}
+
+.game-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 7px 32px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .carousel-content {
+    gap: 16px;
+  }
+  
+  .news-card {
+    width: 450px;
+    height: 300px;
+  }
+  
+  .game-card {
+    width: 280px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+  
+  .carousel-arrow {
+    font-size: 2rem;
+    min-width: 50px;
+    height: 50px;
+  }
+  
+  .news-card {
+    width: 380px;
+    height: 250px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .latest-news,
+  .our-games {
+    padding: 32px 16px;
+  }
+  
+  .carousel-container {
+    gap: 8px;
+  }
+  
+  .carousel-content {
+    gap: 12px;
+  }
+  
+  .news-card {
+    width: 300px;
+    height: 200px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+    padding: 4px 8px;
+  }
+  
+  .carousel-arrow {
+    font-size: 1.5rem;
+    min-width: 40px;
+    height: 40px;
+    padding: 4px 8px;
+  }
+  
+  .news-card {
+    width: 250px;
+    height: 160px;
+  }
+  
+
+}
+
+@media (max-width: 320px) {
+  .latest-news,
+  .our-games {
+    padding: 24px 12px;
+  }
+  
+}
+
+/* Optional: Smooth animations for content */
+.news-card,
+.game-card {
+  animation: fade-in 0.6s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
