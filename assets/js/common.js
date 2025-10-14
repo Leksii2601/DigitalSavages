@@ -121,3 +121,48 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 }, false);
+
+// ================================================
+// iOS VIDEO FIX - Force content to stay visible
+// ================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const heroContent = document.querySelector('.hero-content');
+    const heroVideo = document.querySelector('.hero-video');
+    
+    if (!heroContent || !heroVideo) return;
+    
+    // Force repaint on iOS when video starts playing
+    heroVideo.addEventListener('loadeddata', function() {
+        heroContent.style.opacity = '0.99';
+        setTimeout(() => {
+            heroContent.style.opacity = '1';
+        }, 50);
+    });
+    
+    // Force video to play on iOS
+    heroVideo.addEventListener('canplay', function() {
+        heroVideo.play().catch(err => {
+            console.log('Video autoplay prevented:', err);
+        });
+    });
+    
+    // Additional fix: Force GPU acceleration
+    const forceRepaint = () => {
+        heroContent.style.transform = 'translateZ(0.1px)';
+        requestAnimationFrame(() => {
+            heroContent.style.transform = 'translateZ(0)';
+        });
+    };
+    
+    // Force repaint on video events
+    heroVideo.addEventListener('play', forceRepaint);
+    heroVideo.addEventListener('playing', forceRepaint);
+    
+    // Ensure content is always visible
+    setInterval(() => {
+        if (heroContent.style.opacity !== '1') {
+            heroContent.style.opacity = '1';
+        }
+    }, 1000);
+});

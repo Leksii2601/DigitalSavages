@@ -112,12 +112,20 @@ section {
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  will-change: transform;
+  will-change: transform, opacity;
+  opacity: 1;
+  pointer-events: auto;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 .hero-content h1 {
   font-weight: 700;
   margin: 0;
+  position: relative;
+  z-index: 11;
+  transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
 }
 
 .hero-content h1 span {
@@ -128,6 +136,10 @@ section {
   margin-top: 40px;
   font-weight: 500;
   font-size: 60px;
+  position: relative;
+  z-index: 11;
+  transform: translateZ(1px);
+  -webkit-transform: translateZ(1px);
 }
 
 /* ECO-DINO SECTION */
