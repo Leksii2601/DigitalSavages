@@ -7,16 +7,26 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     max-width: 100vw;
     box-sizing: border-box;
-    overflow: visible;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: padding 0.3s ease, background 0.3s ease;
 }
 
-nav {
+/* Compressed header on scroll */
+header.scrolled {
+    padding: 6px 0;
+    background: rgba(167, 167, 167, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+header nav {
     max-width: 100%;
     box-sizing: border-box;
-    overflow: visible;
+    transition: all 0.3s ease;
 }
 
 header .logo {
@@ -25,6 +35,12 @@ header .logo {
     height: auto;
     display: inline-block;
     position: relative;
+    transition: width 0.3s ease;
+}
+
+/* Logo size on scroll */
+header.scrolled .logo {
+    width: 400px;
 }
 
 header .logo img {
@@ -42,9 +58,20 @@ header ul li {
     font-family: 'Montserrat', sans-serif;
     margin: 0 4px;
     cursor: pointer;
-    transition: transform 0.2s cubic-bezier(.43,1.09,.66,1.09), box-shadow 0.2s;
+    transition: transform 0.2s cubic-bezier(.43,1.09,.66,1.09), box-shadow 0.2s, padding 0.3s ease, font-size 0.3s ease;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     animation: fall-in-bounce 1.4s cubic-bezier(.43,1.09,.66,1.09) towards;
+    white-space: nowrap;
+}
+
+/* Smaller buttons on scroll */
+header.scrolled ul li {
+    padding: 8px 18px;
+    font-size: 14px;
+}
+
+header ul li a {
+    white-space: nowrap;
 }
 
 @keyframes fall-in-bounce {
@@ -190,6 +217,7 @@ header ul li:nth-child(6) {
     cursor: pointer;
     transition: all 0.3s ease;
     width: 250px;
+    white-space: nowrap;
 }
 
 .brand-mobile-navigation ul li:hover {
@@ -202,6 +230,7 @@ header ul li:nth-child(6) {
     text-decoration: none;
     display: block;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 /* Hamburger перемикання на 1280px */
@@ -217,6 +246,20 @@ header ul li:nth-child(6) {
         font-size: 14px;
         margin: 0 2px;
     }
+    
+    /* Scrolled state for tablets */
+    header.scrolled {
+        padding: 4px 0;
+    }
+    
+    header.scrolled ul li {
+        padding: 7px 16px;
+        font-size: 13px;
+    }
+    
+    header.scrolled .logo {
+        width: 200px;
+    }
 }
 
 /* Responsive стилі для мобільного меню */
@@ -226,6 +269,15 @@ header ul li:nth-child(6) {
         padding: 14px 24px;
         font-size: 16px;
     }
+    
+    /* Scrolled state for mobile */
+    header.scrolled {
+        padding: 3px 0;
+    }
+    
+    header.scrolled .logo {
+        width: 160px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -233,6 +285,15 @@ header ul li:nth-child(6) {
         width: 180px;
         padding: 12px 20px;
         font-size: 14px;
+    }
+    
+    /* Scrolled state for small mobile */
+    header.scrolled {
+        padding: 2px 0;
+    }
+    
+    header.scrolled .logo {
+        width: 140px;
     }
     
     .brand-mobile-navigation ul {
@@ -245,6 +306,15 @@ header ul li:nth-child(6) {
         width: 160px;
         padding: 10px 16px;
         font-size: 13px;
+    }
+    
+    /* Scrolled state for very small mobile */
+    header.scrolled {
+        padding: 2px 0;
+    }
+    
+    header.scrolled .logo {
+        width: 120px;
     }
 }
 
@@ -260,7 +330,19 @@ header ul li:nth-child(6) {
     height: 44px;
     position: relative;
     border-radius: 6px;
-    transition: background-color 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+/* Smaller hamburger on scroll */
+header.scrolled .hamburger {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+}
+
+header.scrolled .hamburger span {
+    width: 20px;
+    height: 2px;
 }
 
 .hamburger:hover {
@@ -341,8 +423,8 @@ header ul li:nth-child(6) {
     position: relative;
     display: flex;
     align-items: center;
-    margin-left: -140px;
-    margin-right:70px;
+    margin-left: 20px;
+    margin-right: 20px;
     z-index: 1001;
 }
 
@@ -360,6 +442,17 @@ header ul li:nth-child(6) {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    white-space: nowrap;
+}
+
+/* Smaller language button on scroll */
+header.scrolled .language-button {
+    padding: 7px 12px;
+    gap: 6px;
+}
+
+header.scrolled .language-button .current-lang {
+    font-size: 12px;
 }
 
 .language-button:hover {
@@ -371,6 +464,8 @@ header ul li:nth-child(6) {
 .language-button .current-lang {
     font-size: 14px;
     font-weight: 700;
+    white-space: nowrap;
+    transition: font-size 0.3s ease;
 }
 
 .language-arrow {
@@ -445,31 +540,207 @@ header ul li:nth-child(6) {
     color: #AB5DFF;
 }
 
-@media (max-width: 1280px) {
-    .logo img{
-        width: 240px;
+/* Desktop large screens - move left */
+@media (min-width: 1400px) {
+    .language-switcher {
+        margin-left: -80px;
+        margin-right: 40px;
+    }
+}
+
+/* Desktop medium screens */
+@media (min-width: 1280px) and (max-width: 1399px) {
+    .language-switcher {
+        margin-left: -40px;
+        margin-right: 20px;
     }
     
+    .language-button {
+        padding: 8px 14px;
+    }
+}
+
+/* Tablets and below */
+@media (max-width: 1279px) {
+    .logo img {
+        width: 200px;
+    }
+    
+    /* Hide desktop navigation */
     .language-switcher {
-        margin-left: 12px;
-        margin-right: 12px;
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
     }
     
     .language-button {
         padding: 8px 12px;
     }
+    
+    .language-button .current-lang {
+        font-size: 13px;
+    }
+    
+    .language-dropdown {
+        min-width: 160px;
+    }
+    
+    /* Scrolled state */
+    header.scrolled .language-button {
+        padding: 6px 10px;
+    }
+    
+    header.scrolled .language-button .current-lang {
+        font-size: 11px;
+    }
 }
 
+/* Mobile landscape and small tablets */
+@media (max-width: 768px) {
+    .language-switcher {
+        right: 55px;
+    }
+    
+    .language-button {
+        padding: 7px 10px;
+        gap: 6px;
+    }
+    
+    .language-button .current-lang {
+        font-size: 12px;
+    }
+    
+    .language-arrow {
+        width: 10px;
+        height: 7px;
+    }
+    
+    .language-dropdown {
+        min-width: 140px;
+    }
+    
+    .language-dropdown li {
+        padding: 10px 16px;
+        font-size: 13px;
+        gap: 10px;
+    }
+    
+    /* Scrolled state for mobile */
+    header.scrolled .language-switcher {
+        right: 55px;
+    }
+    
+    header.scrolled .language-button {
+        padding: 5px 8px;
+        gap: 4px;
+    }
+    
+    header.scrolled .language-button .current-lang {
+        font-size: 10px;
+    }
+}
+
+/* Mobile portrait */
 @media (max-width: 512px) {
-   .logo img{
-       width: 200px;
-   }
-   
-   .language-button {
-       padding: 6px 10px;
-   }
-   
-   .language-button .current-lang {
-       font-size: 12px;
-   }
+    .logo img {
+        width: 160px;
+    }
+    
+    .language-switcher {
+        right: 65px;
+    }
+    
+    .language-button {
+        padding: 6px 8px;
+        gap: 4px;
+    }
+    
+    .language-button .current-lang {
+        font-size: 11px;
+    }
+    
+    .language-arrow {
+        width: 9px;
+        height: 6px;
+    }
+    
+    .language-dropdown {
+        min-width: 120px;
+        right: 0;
+    }
+    
+    .language-dropdown li {
+        padding: 8px 12px;
+        font-size: 12px;
+        gap: 8px;
+    }
+    
+    .language-dropdown li .flag {
+        font-size: 16px;
+    }
+    
+    /* Scrolled state for small mobile */
+    header.scrolled .language-switcher {
+        right: 50px;
+    }
+    
+    header.scrolled .language-button {
+        padding: 4px 6px;
+        gap: 3px;
+    }
+    
+    header.scrolled .language-button .current-lang {
+        font-size: 9px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 380px) {
+    .language-switcher {
+        right: 60px;
+    }
+    
+    .language-button {
+        padding: 5px 7px;
+        gap: 3px;
+    }
+    
+    .language-button .current-lang {
+        font-size: 10px;
+    }
+    
+    .language-arrow {
+        width: 8px;
+        height: 5px;
+    }
+    
+    .language-dropdown {
+        min-width: 110px;
+    }
+    
+    .language-dropdown li {
+        padding: 7px 10px;
+        font-size: 11px;
+        gap: 6px;
+    }
+    
+    .language-dropdown li .flag {
+        font-size: 14px;
+    }
+    
+    /* Scrolled state for very small mobile */
+    header.scrolled .language-switcher {
+        right: 48px;
+    }
+    
+    header.scrolled .language-button {
+        padding: 3px 5px;
+        gap: 2px;
+    }
+    
+    header.scrolled .language-button .current-lang {
+        font-size: 8px;
+    }
 }

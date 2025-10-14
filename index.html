@@ -15,12 +15,25 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <meta
+      name="description"
+      content="Digital Savages Studio - creative code. wild ideas"
+    />
+    <meta
+      name="keywords"
+      content="Digital Savages, game development, mobile games, EcoDino, educational games, environmental games, game studio, creative coding, wild ideas"
+    />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" />
   </head>
 
   <body>
     <div id="header-container"></div>
     <main>
       <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="assets/videos/hero-background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
           <h1 data-aos="fade-down" data-aos-delay="200">
             Digital Savages <br /><span>studio</span>
@@ -32,10 +45,9 @@
           >
             creative code. wild ideas
           </h2>
-          <div id="our_games"></div>
         </div>
       </section>
-
+      <div id="our_games"></div>
       <section class="Eco-Dino">
         <div class="title-img" data-aos="zoom-in" data-aos-duration="1000">
           <img src="/assets/images/main-page/eco-dino.png" alt="" />
@@ -44,7 +56,7 @@
           <div class="wrapper">
             <div
               class="graphics-img"
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="200"
               data-aos-duration="1000"
             >
@@ -55,7 +67,7 @@
             </div>
             <div
               class="eco-dino-text-wrapper"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="300"
               data-aos-duration="1000"
             >
@@ -75,7 +87,7 @@
                 профілю та почніть місію порятунку Землі разом з EcoDino!
               </p>
               <div class="d-wrapper" data-aos="zoom-in" data-aos-delay="500">
-                <a href="#">
+                <a href="https://forms.gle/75HzdMpqYjtsVaoF6" target="_blank">
                   <div class="downoload-button" data-translate="download_game">
                     Завантажити гру
                   </div>
@@ -235,7 +247,7 @@
           <div class="wrapper">
             <div
               class="graphics-img"
-              data-aos="fade-right"
+              data-aos="fade-up"
               data-aos-delay="200"
               data-aos-duration="1000"
             >
@@ -246,7 +258,7 @@
             </div>
             <div
               class="eco-dino-text-wrapper"
-              data-aos="fade-left"
+              data-aos="fade-up"
               data-aos-delay="300"
               data-aos-duration="1000"
             >
@@ -264,7 +276,10 @@
                 Чекаємо саме на тебе!</strong
               >
               <div class="d-wrapper" data-aos="zoom-in" data-aos-delay="500">
-                <a href="#">
+                <a
+                  href="https://linktr.ee/digitalsavages.studio?fbclid=PAZXh0bgNhZW0CMTEAAafrYisdWkeicC0UD5Bz1Bw2mSmXrZU6LB1-t41kXAfM2lqsKlSk309WBvb6tA_aem_0_3Q2b8tQlVfZ2F20uyyBQ"
+                  target="_blank"
+                >
                   <div
                     class="downoload-button"
                     data-translate="feedback_button"
@@ -286,11 +301,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000,
+        duration: 800,
         easing: "ease-out-cubic",
         once: true,
-        mirror: true,
-        offset: 50,
+        mirror: false,
+        offset: 0,
+        disable: false,
+        anchorPlacement: "top-bottom",
       });
     </script>
   </body>

@@ -103,3 +103,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 100);
 });
+
+// ================================================
+// HEADER SCROLL EFFECT
+// ================================================
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (!header) return;
+    
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Add 'scrolled' class when scrolled down more than 50px
+    if (scrollTop > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+}, false);

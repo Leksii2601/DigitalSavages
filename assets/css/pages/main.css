@@ -16,11 +16,11 @@
   --name-color: #B69AFD;
 }
 
-/* BASE STYLES */
+/* BASE STYLES - Prevent horizontal scroll globally */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  max-width: 100vw;
+  max-width: 100vw !important;
+  width: 100% !important;
 }
 
 body {
@@ -28,9 +28,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--main-font);
-  overflow-x: hidden;
-  max-width: 100vw;
-  box-sizing: border-box;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative;
 }
 
 * {
@@ -38,10 +38,25 @@ body {
 }
 
 main {
-  margin-top: 0;
-  padding-top: 0;
-  overflow-x: hidden;
   max-width: 100vw;
+  width: 100%;
+}
+
+/* Prevent AOS animations from causing horizontal scroll */
+[data-aos] {
+  overflow-x: clip;
+}
+
+[data-aos="fade-up"],
+[data-aos="fade-down"],
+[data-aos="zoom-in"] {
+  transform: translate3d(0, 0, 0);
+}
+
+section {
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
 }
 
 .container {
@@ -54,11 +69,28 @@ main {
 .hero {
   background-color: #000000;
   height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
   max-width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  object-fit: cover;
+  opacity: 0.7;
 }
 
 .hero-content {
@@ -70,6 +102,8 @@ main {
   font-size: 60px;
   text-align: center;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content h1 {
@@ -90,7 +124,6 @@ main {
 /* ECO-DINO SECTION */
 .Eco-Dino {
   padding: 40px 20px;
-  overflow-x: hidden;
   max-width: 100vw;
 }
 
@@ -99,7 +132,7 @@ main {
   max-width: 100%;
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin: 25px 0;
 }
 
 .Eco-Dino .title-img img {
@@ -121,12 +154,17 @@ main {
   max-width: 1400px;
   gap: 50px;
   align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .eco-dino-wrapper .graphics-img {
   flex: 1;
   display: flex;
   justify-content: center;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 .eco-dino-wrapper .graphics-img img {
@@ -183,7 +221,6 @@ main {
 /* ABOUT US SECTION */
 .about-us {
   padding: 60px 20px;
-  overflow-x: hidden;
   max-width: 100vw;
 }
 
@@ -193,7 +230,7 @@ main {
   font-family: var(--name-font);
   color: var(--button-color);
   padding: 8px 16px;
-  margin: 0 0 60px 0;
+  margin: 0 0 30px 0;
   text-align: center;
   width: 100%;
   max-width: 100%;
@@ -267,6 +304,8 @@ main {
 .join-us {
   margin-top: 100px;
   padding: 60px 20px;
+  max-width: 100vw;
+  width: 100%;
 }
 
 .join-us .sec-title {
@@ -278,6 +317,7 @@ main {
   margin: 0 0 40px 0;
   text-align: center;
   width: 100%;
+  max-width: 100%;
 }
 
 .join-us .title {
@@ -380,6 +420,7 @@ main {
   .member-photo {
     width: 280px;
     height: 220px;
+    margin-bottom: 100px;
   }
   
   .member-info-straight {
@@ -459,6 +500,7 @@ main {
   .member-photo {
     width: 220px;
     height: 250px;
+    margin-bottom: 0;
   }
   
   .member-name {
@@ -475,7 +517,7 @@ main {
   }
   
   .join-us {
-    margin-top: 60px;
+    margin-top: -20px;
     padding: 40px 15px;
   }
   
